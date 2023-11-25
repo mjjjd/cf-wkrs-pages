@@ -746,19 +746,32 @@ async function handleUDPOutBound(webSocket, vlessResponseHeader, log) {
  * @returns {string}
  */
 function getVLESSConfig(userID, hostName) {
-    const vlessLink = `vless://${userID}@${hostName}:80?encryption=none&security=none&fp=randomized&type=ws&host=${hostName}&path=%2F%3Fed%3D2048#${hostName}`
-    const vlessTlsLink = `vless://${userID}@${hostName}:443?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=%2F%3Fed%3D2048#${hostName}`
+    const vlessLink80 = `vless://${userID}@freeyx.cloudflare88.eu.org:80?encryption=none&security=none&fp=randomized&type=ws&host=${hostName}&path=%2F%3Fed%3D2048# CF vless 80`
+    const vlessLink2052 = `vless://${userID}@freeyx.cloudflare88.eu.org:2052?encryption=none&security=none&fp=randomized&type=ws&host=${hostName}&path=%2F%3Fed%3D2048# CF vless 2052`
+    const vlessLink8080 = `vless://${userID}@freeyx.cloudflare88.eu.org:8080?encryption=none&security=none&fp=randomized&type=ws&host=${hostName}&path=%2F%3Fed%3D2048# CF vless 8080 `
+    const vlessLink8880 = `vless://${userID}@freeyx.cloudflare88.eu.org:8880?encryption=none&security=none&fp=randomized&type=ws&host=${hostName}&path=%2F%3Fed%3D2048# CF vless 8880`
+    const vlessLink2052 = `vless://${userID}@freeyx.cloudflare88.eu.org:2052?encryption=none&security=none&fp=randomized&type=ws&host=${hostName}&path=%2F%3Fed%3D2048# CF vless 2052 `
+    const vlessLink2095 = `vless://${userID}@freeyx.cloudflare88.eu.org:2095?encryption=none&security=none&fp=randomized&type=ws&host=${hostName}&path=%2F%3Fed%3D2048# CF vless 2095`
+    const vlessLink2082 = `vless://${userID}@freeyx.cloudflare88.eu.org:2082?encryption=none&security=none&fp=randomized&type=ws&host=${hostName}&path=%2F%3Fed%3D2048# CF vless 2082`
+    const vlessLink2086 = `vless://${userID}@freeyx.cloudflare88.eu.org:2086?encryption=none&security=none&fp=randomized&type=ws&host=${hostName}&path=%2F%3Fed%3D2048# CF vless 2086
+    const vlessTlsLink = `vless://${userID}@freeyx.cloudflare88.eu.org:443?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=%2F%3Fed%3D2048#${hostName}`
     return `
 下面是非 TLS 端口的节点信息及分享链接，可使用 CF 支持的非 TLS 端口：
 
-地址：${hostName} 或 CF 优选 IP
-端口：80 或 CF 支持的非 TLS 端口
+地址：freeyx.cloudflare88.eu.org
+端口：80 8080 8880 2052  2082 2086 2095
 UUID：${userID}
 传输：ws
 伪装域名：${hostName}
 路径：/?ed=2048
 
-${vlessLink}
+${vlessLink80}
+${vlessLink8080}
+${vlessLink8880}
+${vlessLink2052}
+${vlessLink2082}
+${vlessLink2086}
+${vlessLink2095}
 
 下面是 TLS 端口的节点信息及分享链接，可使用 CF 支持的 TLS 端口：
 
