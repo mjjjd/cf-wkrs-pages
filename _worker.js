@@ -755,6 +755,11 @@ function getVLESSConfig(userID, hostName) {
     const vlessLink2082 = `vless://${userID}@freeyx.cloudflare88.eu.org:2082?encryption=none&security=none&fp=randomized&type=ws&host=${hostName}&path=%2F%3Fed%3D2048# CF vless 2082`
     const vlessLink2086 = `vless://${userID}@freeyx.cloudflare88.eu.org:2086?encryption=none&security=none&fp=randomized&type=ws&host=${hostName}&path=%2F%3Fed%3D2048# CF vless 2086 `
     const vlessTlsLink443 = `vless://${userID}@freeyx.cloudflare88.eu.org:443?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=%2F%3Fed%3D2048#CF vless 443`
+    const vlessTlsLink8443 = `vless://${userID}@freeyx.cloudflare88.eu.org:8443?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=%2F%3Fed%3D2048#CF vless 8443`
+    const vlessTlsLink2053 = `vless://${userID}@freeyx.cloudflare88.eu.org:2053?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=%2F%3Fed%3D2048#CF vless 2053`
+    const vlessTlsLink2083 = `vless://${userID}@freeyx.cloudflare88.eu.org:2083?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=%2F%3Fed%3D2048#CF vless 2083`
+    const vlessTlsLink2087 = `vless://${userID}@freeyx.cloudflare88.eu.org:2087?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=%2F%3Fed%3D2048#CF vless 2087`
+    const vlessTlsLink2096 = `vless://${userID}@freeyx.cloudflare88.eu.org:2096?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=%2F%3Fed%3D2048#CF vless 2096`
     return `
 下面是非 TLS 端口的节点信息及分享链接，可使用 CF 支持的非 TLS 端口：
 
@@ -784,7 +789,12 @@ UUID：${userID}
 路径：/?ed=2048
 SNI 域名：${hostName}
 
-${vlessTlsLink}
+${vlessTlsLink443}
+${vlessTlsLink8443}
+${vlessTlsLink2053}
+${vlessTlsLink2083}
+${vlessTlsLink2087}
+${vlessTlsLink2096}
 
 提示：如使用 workers.dev 域名，则无法使用 TLS 端口
 `;
