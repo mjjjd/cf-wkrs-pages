@@ -747,7 +747,7 @@ async function handleUDPOutBound(webSocket, vlessResponseHeader, log) {
  */
 function getVLESSConfig(userID, hostName) {
     const vlessLink80 = `vless://${userID}@freeyx.cloudflare88.eu.org:80?encryption=none&security=none&fp=randomized&type=ws&host=${hostName}&path=%2F%3Fed%3D2048# CF vless 80`
-    const vlessLink2052 = `vless://${userID}@freeyx.cloudflare88.eu.org:2052?encryption=none&security=none&fp=randomized&type=ws&host=${hostName}&path=%2F%3Fed%3D2048# CF vless 2052`
+    const vlessLink2052 = `vless://${userID}@${hostName}:2052?encryption=none&security=none&fp=randomized&type=ws&host=${hostName}&path=%2F%3Fed%3D2048# CF vless 2052`
     const vlessLink8080 = `vless://${userID}@freeyx.cloudflare88.eu.org:8080?encryption=none&security=none&fp=randomized&type=ws&host=${hostName}&path=%2F%3Fed%3D2048# CF vless 8080 `
     const vlessLink8880 = `vless://${userID}@freeyx.cloudflare88.eu.org:8880?encryption=none&security=none&fp=randomized&type=ws&host=${hostName}&path=%2F%3Fed%3D2048# CF vless 8880`
     const vlessLink2052 = `vless://${userID}@freeyx.cloudflare88.eu.org:2052?encryption=none&security=none&fp=randomized&type=ws&host=${hostName}&path=%2F%3Fed%3D2048# CF vless 2052 `
