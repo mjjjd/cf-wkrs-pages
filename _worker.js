@@ -6,7 +6,7 @@ import { connect } from 'cloudflare:sockets';
 // How to generate your own UUID:
 let userID = '6a6abda7-d75c-404c-b60c-4bb401cce66d';
 
-const proxyIPs = ['proxyip.fxxk.dedyn.io','cdn.anycast.eu.org'];
+const proxyIPs = ['proxyip.fxxk.dedyn.io','proxyip.sg.fxxk.dedyn.io','cdn.anycast.eu.org'];
 let proxyIP = proxyIPs[Math.floor(Math.random() * proxyIPs.length)];
 
 let dohURL = 'https://dns.google/dns-query'; // https://cloudflare-dns.com/dns-query or https://dns.google/dns-query
@@ -101,7 +101,7 @@ export default {
                     default:
                         // return new Response('Not found', { status: 404 });
                         // For any other path, reverse proxy to 'maimai.sega.jp' and return the original response
-                        url.hostname = 'image.dooo.ng';
+                        url.hostname = 'pan.huang1111.cn';
                         url.protocol = 'https:';
                         request = new Request(url, request);
                         return await fetch(request);
